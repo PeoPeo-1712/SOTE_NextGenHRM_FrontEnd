@@ -321,7 +321,7 @@ const RegisterPage = () => {
                     placeholder="Select your date of birth"
                     suffixIcon={<CalendarOutlined />}
                     disabledDate={(current) =>
-                      current && current > dayjs().subtract(18, "year")
+                      !current || current.isAfter(dayjs().subtract(18, "year"))
                     }
                   />
                 </Form.Item>
